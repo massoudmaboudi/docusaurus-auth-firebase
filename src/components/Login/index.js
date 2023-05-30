@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-
-import firebase from "firebase/compat/app";
-import * as firebaseui from "firebaseui";
+import React from "react";
 
 import { auth } from "../Auth";
 
-import 'firebaseui/dist/firebaseui.css';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+
 import './styles.css';
 
 // Configure FirebaseUI.
@@ -16,10 +16,7 @@ export const uiConfig = {
 };
 
 export function Login() {
-    useEffect(() => {
-        const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(auth);
-        ui.start('.auth-wrapper', uiConfig);
-    });
-
-    return <div className="auth-wrapper"></div>;
+    return <div className="auth-wrapper">
+        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
+    </div>;
 };
