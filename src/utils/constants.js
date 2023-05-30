@@ -7,4 +7,4 @@ export const LOGOUT_BUTTON = "Logout";
 export const LOGIN_BUTTON = "Login";
 
 // Add the protected paths here
-export const PROTECTED_PATHS = [BASE];
+export const PROTECTED_PATHS = ["/docs"];
